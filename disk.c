@@ -3,7 +3,7 @@
 
 
 
-/---FCFS---/
+//FCFS
 struct RCB handle_request_arrival_fcfs(struct RCB request_queue[QUEUEMAX],
                                        int *queue_cnt,
                                        struct RCB current_req,
