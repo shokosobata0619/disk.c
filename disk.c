@@ -3,6 +3,12 @@
 
 
 
+static inline struct RCB NULLRCB(void) { return (struct RCB){0,0,0,0,0}; }
+static inline int is_null(struct RCB r) {
+    return r.request_id==0 && r.arrival_timestamp==0 && r.cylinder==0
+        && r.address==0 && r.process_id==0;
+}
+
 static inline void enqueue(struct RCB q[QUEUEMAX], int *cnt, struct RCB r) {
     if (*cnt < QUEUEMAX) q[(*cnt)++] = r;
 }
