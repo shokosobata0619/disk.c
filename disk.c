@@ -22,12 +22,12 @@ static inline struct RCB remove_at(struct RCB q[QUEUEMAX], int *cnt, int idx) {
 //FCFS
 struct RCB handle_request_arrival_fcfs(struct RCB request_queue[QUEUEMAX],
                                        int *queue_cnt,
-                                       struct RCB current_req,
-                                       struct RCB new_req,
+                                       struct RCB current,
+                                       struct RCB new,
                                        int timestamp) {
     (void)timestamp;                 // not used by FCFS arrival
-    if (is_null(current_req))        // disk free
+    if (is_null(current))        // disk free
         return new_req;              // start it now
-    enqueue(req_queue, queue_cnt, new_req);
+    enqueue(req_queue, queue_cnt, new);
     return current_req;              // keep servicing current
 }
