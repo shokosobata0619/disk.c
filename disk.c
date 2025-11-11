@@ -27,7 +27,7 @@ struct RCB handle_request_arrival_fcfs(struct RCB request_queue[QUEUEMAX],
                                        int timestamp) {
     (void)timestamp;                 // not used by FCFS arrival
     if (is_null(current))        // disk free
-        return new_req;              // start it now
+        return new;              // start it now
     enqueue(req_queue, queue_cnt, new);
-    return current_req;              // keep servicing current
+    return current;              // keep servicing current
 }
